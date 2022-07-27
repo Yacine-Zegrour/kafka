@@ -1,6 +1,7 @@
 package com.esgi.kafkaproducer.Exposition;
 
 import com.esgi.kafkaproducer.application.SendMessageService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class KafkaController {
     }
 
     @PostMapping("/publishJson")
-    public void messageJsonToTopic(@RequestBody Subscriber subscriber) {
+    public void messageJsonToTopic(@RequestBody Subscriber subscriber) throws JsonProcessingException {
 
         sendMessageService.sendJsonMessage(subscriber);
     }

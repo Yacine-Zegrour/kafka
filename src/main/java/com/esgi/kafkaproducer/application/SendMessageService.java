@@ -3,6 +3,7 @@ package com.esgi.kafkaproducer.application;
 import com.esgi.kafkaproducer.Exposition.Subscriber;
 import com.esgi.kafkaproducer.utils.JsonProducer;
 import com.esgi.kafkaproducer.utils.Producer;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
@@ -10,7 +11,6 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
-
 public class SendMessageService {
 
 
@@ -31,7 +31,7 @@ public class SendMessageService {
 
 
     }
-    public void sendJsonMessage(Subscriber subscriber) {
+    public void sendJsonMessage(Subscriber subscriber) throws JsonProcessingException {
 
 
         this.jsonProducer.sendMessage(subscriber);

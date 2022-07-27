@@ -19,6 +19,14 @@ public class Subscriber {
     private Ccuid ccuid;
 
 
-
-
+    @Override
+    public String toString() {
+        return "Subscriber{" +
+                "subscriberRef='" + subscriberRef + '\'' +
+                ", subscriberType='" + subscriberType + '\'' +
+                ", customerRef='" + customerRef + '\'' +
+                ", contactPerson='" + contactPerson + '\'' +
+                ", ccuid=" + ccuid +
+                '}';
+    }
 }
